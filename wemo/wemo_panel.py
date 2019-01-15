@@ -3,7 +3,7 @@ import pywemo
 from PIL import Image, ImageFont, ImageDraw
 # from font_source_sans_pro import SourceSansPro
 from font_hanken_grotesk import HankenGroteskBold
-from font_font_awesome import FontAwesome
+from font_font_awesome import FontAwesome5
 from inky import InkyPHAT
 
 from lil_panel import LilPanel
