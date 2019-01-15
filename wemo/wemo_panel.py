@@ -7,7 +7,7 @@ from lil_panel import LilPanel
 
 class WemoPanel(LilPanel):
     def __init__(self, inky_display):
-        super().__init__()
+        super().__init__(inky_display)
         self.title = "Light Switches"
         print "[WemoPanel __init__] Discovering devices..."
         self.devices = pywemo.discover_devices()
@@ -22,15 +22,15 @@ class WemoPanel(LilPanel):
         hanken_bold_font = ImageFont.truetype(HankenGroteskBold, 35)
 
         # Create a new canvas to draw on
-        img = Image.new("P", (inky_display.WIDTH, inky_display.HEIGHT))
+        img = Image.new("P", (self.inky_display.WIDTH, self.inky_display.HEIGHT))
         draw = ImageDraw.Draw(img)
 
         # Draw title
         title_w, title_h = hanken_bold_font.getsize(self.title)
-        title_x = int((inky_display.WIDTH - title_w) / 2)
+        title_x = int((self.inky_display.WIDTH - title_w) / 2)
         title_y = 0
-        draw.text((title_x, title_y), self.title, inky_display.WHITE, font=hanken_bold_font)
+        draw.text((title_x, title_y), self.title, self.inky_display.WHITE, font=hanken_bold_font)
 
         # Display the completed image
-        inky_display.set_image(img)
-        inky_display.show()
+        self.inky_display.set_image(img)
+        self.inky_display.show()

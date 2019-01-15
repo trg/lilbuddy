@@ -1,6 +1,6 @@
 class LilPanel():
-    def __init__(self, inky):
-        self.inky = inky
+    def __init__(self, inky_display):
+        self.inky_display = inky_display
 
     def onMount(self):
         """Called when panel comes into view"""
