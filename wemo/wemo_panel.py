@@ -1,7 +1,7 @@
 import pywemo
 
 from PIL import Image, ImageFont, ImageDraw
-from font_hanken_grotesk import HankenGroteskBold
+from font_source_sans_pro import SourceSansPro
 from inky import InkyPHAT
 
 from lil_panel import LilPanel
@@ -19,7 +19,7 @@ class WemoPanel(LilPanel):
         print self.devices
 
     def loading_screen(self, msg):
-        hanken_bold_font = ImageFont.truetype(HankenGroteskBold, 14)
+        hanken_bold_font = ImageFont.truetype(SourceSansPro, 14)
         # Create a new canvas to draw on
         img = Image.new("P", (self.inky_display.WIDTH, self.inky_display.HEIGHT))
         draw = ImageDraw.Draw(img)
@@ -36,7 +36,7 @@ class WemoPanel(LilPanel):
     def render(self):
         print "[WemoPanel] Rendering..."
         # Set up the correct display and scaling factors
-        hanken_bold_font = ImageFont.truetype(HankenGroteskBold, 24)
+        hanken_bold_font = ImageFont.truetype(SourceSansPro, 24)
 
         # Create a new canvas to draw on
         img = Image.new("P", (self.inky_display.WIDTH, self.inky_display.HEIGHT))
@@ -49,7 +49,7 @@ class WemoPanel(LilPanel):
         draw.text((title_x, title_y), self.title, self.inky_display.BLACK, font=hanken_bold_font)
 
         # List each device
-        device_list_font = ImageFont.truetype(HankenGroteskBold, 16)
+        device_list_font = ImageFont.truetype(SourceSansPro, 16)
         count = 0
         padding_x = 5
         padding_y = 2
