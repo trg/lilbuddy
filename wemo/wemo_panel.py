@@ -18,6 +18,22 @@ class WemoPanel(LilPanel):
         self.title = "Switches"
         print self.devices
 
+    def loadingScreen(self):
+        loading_message = "Discovering Devices..."
+        hanken_bold_font = ImageFont.truetype(HankenGroteskBold, 12)
+        # Create a new canvas to draw on
+        img = Image.new("P", (self.inky_display.WIDTH, self.inky_display.HEIGHT))
+        draw = ImageDraw.Draw(img)
+        # Draw Message
+        msg_w, msg_h = hanken_bold_font.getsize(loading_message)
+        msg_x = int((self.inky_display.WIDTH - msg_w) / 2)
+        msg_y = int((self.inky_display.HEIGHT - msg_h) / 2)
+        draw.text((msg_x, msg_y), loading_message, self.inky_display.BLACK, font=hanken_bold_font)
+
+        # Display the completed image
+        self.inky_display.set_image(img)
+        self.inky_display.show()
+
     def render(self):
         print "[WemoPanel] Rendering..."
         # Set up the correct display and scaling factors
