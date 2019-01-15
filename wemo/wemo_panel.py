@@ -75,7 +75,8 @@ class WemoPanel(LilPanel):
             draw.text((padding_x, y), line_of_text, self.inky_display.BLACK, font=device_list_font)
             # Icon:
             iw, ih = device_list_font.getsize(letter_text)
-            draw.text((padding_x + iw, y), u'\uf0eb', self.inky_display.BLACK, font=icon_font)
+            # some magic numbers for positioning
+            draw.text((padding_x + iw, y + 2), u'\uf0eb', self.inky_display.BLACK, font=icon_font)
             count += 1
 
         # Display the completed image
