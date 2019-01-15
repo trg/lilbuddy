@@ -1,7 +1,7 @@
 import pywemo
 
 from PIL import Image, ImageFont, ImageDraw
-from font_source_sans_pro import SourceSansPro
+# from font_source_sans_pro import SourceSansPro
 from font_hanken_grotesk import HankenGroteskBold
 from inky import InkyPHAT
 
@@ -49,7 +49,7 @@ class WemoPanel(LilPanel):
         draw.text((title_x, title_y), self.title, self.inky_display.BLACK, font=title_font)
 
         # List each device
-        device_list_font = ImageFont.truetype(SourceSansPro, 16)
+        device_list_font = ImageFont.truetype(HankenGroteskBold, 16)
         count = 0
         padding_x = 5
         padding_y = 2
