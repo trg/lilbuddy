@@ -19,6 +19,9 @@ Don't use virtualenv (pi comes with specific packages that work - TODO replicate
     pip install -r requirements.txt
     sudo pip install einky
 
+## Troubleshooting
+
+Sometimes the pHAT screen won't update.  Not sure why.  Power cycling Pi is required to fix it.
 
 TODO:
 - Add cleaning method
