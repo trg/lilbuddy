@@ -1,6 +1,7 @@
 import pywemo
 
 from PIL import Image, ImageFont, ImageDraw
+from font_hanken_grotesk import HankenGroteskBold
 from inky import InkyPHAT
 
 from lil_panel import LilPanel
