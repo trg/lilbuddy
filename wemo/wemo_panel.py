@@ -18,7 +18,7 @@ class WemoPanel(LilPanel):
         print self.devices
 
     def loading_screen(self, msg):
-        hanken_bold_font = ImageFont.truetype(HankenGroteskBold, 12)
+        hanken_bold_font = ImageFont.truetype(HankenGroteskBold, 14)
         # Create a new canvas to draw on
         img = Image.new("P", (self.inky_display.WIDTH, self.inky_display.HEIGHT))
         draw = ImageDraw.Draw(img)
