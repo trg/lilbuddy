@@ -9,9 +9,11 @@ class WemoPanel(LilPanel):
     def __init__(self, inky):
         super().__init__()
         self.title = "Light Switches"
+        print "[WemoPanel __init__] Discovering devices..."
         self.devices = pywemo.discover_devices()
 
     def onMount(self):
+        print "[WemoPanel onMount] Discovering devices..."
         self.devices = pywemo.discover_devices()
 
     def render(self):
