@@ -53,8 +53,10 @@ class WemoPanel(LilPanel):
         padding_x = 5
         padding_y = 2
         print self.devices
-        for device in self.devices:
+        button_map = ['A', 'B', 'C', 'D']
+        for idx, val in self.devices:
             name = device.name
+            line_of_text = button_map[idx] + ") " + name
             w, h = device_list_font.getsize(name)
             y = title_h + (count * h) + padding_y
             draw.text((padding_x, y), name, self.inky_display.BLACK, font=device_list_font)
