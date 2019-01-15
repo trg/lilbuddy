@@ -7,7 +7,7 @@ from lil_panel import LilPanel
 
 class WemoPanel(LilPanel):
     def __init__(self, inky_display):
-        super().__init__(inky_display)
+        super(LilPanel, self).__init__(inky_display)
         self.title = "Light Switches"
         print "[WemoPanel __init__] Discovering devices..."
         self.devices = pywemo.discover_devices()
