@@ -3,6 +3,7 @@ import pywemo
 from PIL import Image, ImageFont, ImageDraw
 # from font_source_sans_pro import SourceSansPro
 from font_hanken_grotesk import HankenGroteskBold
+from font_awesome import Awesome
 from inky import InkyPHAT
 
 from lil_panel import LilPanel
@@ -18,7 +19,7 @@ class WemoPanel(LilPanel):
         print self.devices
 
     def loading_screen(self, msg):
-        current_font = ImageFont.truetype(HankenGroteskBold, 14)
+        current_font = ImageFont.truetype(HankenGroteskBold, 16)
         # Create a new canvas to draw on
         img = Image.new("P", (self.inky_display.WIDTH, self.inky_display.HEIGHT))
         draw = ImageDraw.Draw(img)

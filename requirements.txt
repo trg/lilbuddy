@@ -1,5 +1,6 @@
 certifi==2018.11.29
 chardet==3.0.4
+font-font-awesome==0.0.2
 font-hanken-grotesk==0.0.2
 font-source-sans-pro==0.0.1
 idna==2.8
