@@ -61,10 +61,11 @@ class WemoPanel(LilPanel):
         for device in self.devices:
             name = device.name
             is_on = device.get_state() == 1
+            # solid font for on; regular (outline only) for off
             if is_on:
-                icon_font = ImageFont.truetype(FontAwesome5Free, 14)
-            else:
                 icon_font = ImageFont.truetype(FontAwesome5FreeSolid, 14)
+            else:
+                icon_font = ImageFont.truetype(FontAwesome5Free, 14)
             letter_text = button_map[count] + ") "
             line_of_text = letter_text + "    "
             line_of_text += name
