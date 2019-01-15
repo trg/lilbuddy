@@ -13,8 +13,9 @@ class App():
         self.panels = [wemo_panel.WemoPanel(self.inky_display)]
         self.panels[0].onMount() # mount first panel
         while True:
+            # TODO - re-render only if state is dirty
             self.render()
-            time.sleep( 5 ) # re-render every 5 seconds, TODO replace with asyncio
+            time.sleep( 5 ) # re-render every 5 seconds, TODO replace with asyncio?
 
     def render(self):
         print "[App] Rendering..."
