@@ -14,6 +14,8 @@ class WemoPanel(LilPanel):
         #self.devices = pywemo.discover_devices()
         print "[WemoPanel onMount] Discovering devices..."
         self.devices = pywemo.discover_devices()
+        print "[WemoPanel onMount] Discovered:"
+        print self.devices
         self.title = "Switches"
         print self.devices
 
