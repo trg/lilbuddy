@@ -6,7 +6,7 @@ import pywemo
 from PIL import Image, ImageFont, ImageDraw
 # from font_source_sans_pro import SourceSansPro
 from font_hanken_grotesk import HankenGroteskBold
-from font_font_awesome import FontAwesome5Free
+from font_font_awesome import FontAwesome5Free, FontAwesome5FreeSolid
 from inky import InkyPHAT
 
 from lil_panel import LilPanel
@@ -54,7 +54,6 @@ class WemoPanel(LilPanel):
 
         # List each device
         device_list_font = ImageFont.truetype(HankenGroteskBold, 16)
-        
         count = 0
         padding_x = 5
         padding_y = 2
@@ -62,14 +61,24 @@ class WemoPanel(LilPanel):
         for device in self.devices:
             name = device.name
             is_on = device.get_state() == 1
-            line_of_text = button_map[count] + ")     "
+            if is_on:
+                icon_font = ImageFont.truetype(FontAwesome5Free, 16) #
+            else:
+                icon_font = ImageFont.truetype(FontAwesome5FreeSolid, 16)
+            letter_text = button_map[count] + ") "
+            line_of_text = letter_text + "    "
             line_of_text += name
             w, h = device_list_font.getsize(line_of_text)
             y = title_h + (count * h) + padding_y
+            # String, with space for icon
             draw.text((padding_x, y), line_of_text, self.inky_display.BLACK, font=device_list_font)
-
+            # Icon:
+            iw, ih = device_list_font.getsize(letter_text)
+            draw.text((padding_x + iw, y), u'\uf0eb', self.inky_display.BLACK, font=icon_font)
             count += 1
 
         # Display the completed image
         self.inky_display.set_image(img)
         self.inky_display.show()
+
+    # u'\uf0eb'
