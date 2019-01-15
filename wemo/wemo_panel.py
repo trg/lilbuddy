@@ -57,12 +57,13 @@ class WemoPanel(LilPanel):
         button_map = ["A", "B", "C", "D"]
         for device in self.devices:
             print "[WemoPanel render] device = ", device
+            print "[WemoPanel render] count = ", count
             name = device.name
             line_of_text = button_map[count] + ") " + name
             w, h = device_list_font.getsize(name)
             y = title_h + (count * h) + padding_y
             draw.text((padding_x, y), name, self.inky_display.BLACK, font=device_list_font)
-            count += y
+            count += 1
 
         # Display the completed image
         self.inky_display.set_image(img)
