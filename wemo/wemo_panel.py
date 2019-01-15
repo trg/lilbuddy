@@ -15,6 +15,7 @@ class WemoPanel(LilPanel):
         self.devices = pywemo.discover_devices()
 
     def render(self):
+        print "[WemoPanel] Rendering..."
         # Set up the correct display and scaling factors
         hanken_bold_font = ImageFont.truetype(HankenGroteskBold, 35)
 

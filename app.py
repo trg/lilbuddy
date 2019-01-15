@@ -12,4 +12,5 @@ class App():
         self.render()
 
     def render(self):
+        print "[App] Rendering..."
         self.panels[0].render()

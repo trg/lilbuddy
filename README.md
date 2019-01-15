@@ -1,6 +1,14 @@
 ## virtualenv
-source ~/.virtualenv/lilbuddy/bin/activate
-pip install -t requirements.txt
+
+Use virtualenv
+
+    $ source ~/.virtualenv/lilbuddy/bin/activate
+
+pip install -r requirements.txt
 
 ## On pi only
-sudo pip install einky
+
+Don't use virtualenv (pi comes with specific packages that work - TODO replicate via requirements.txt)
+
+    pip install -r requirements.txt
+    sudo pip install einky
