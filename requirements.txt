@@ -1,8 +1,11 @@
 certifi==2018.11.29
 chardet==3.0.4
 font-hanken-grotesk==0.0.2
+font-source-sans-pro==0.0.1
+fonts==0.0.3
 idna==2.8
 netifaces==0.10.9
+olefile==0.46
 pywemo==0.4.38
 requests==2.21.0
 six==1.12.0
