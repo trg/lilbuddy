@@ -1,3 +1,9 @@
+# Lil Buddy
+
+Code that powers lil buddy (my home Power and Control tool).
+
+Note: The code is sloppy.
+
 ## virtualenv
 
 Use virtualenv
