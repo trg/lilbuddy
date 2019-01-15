@@ -12,3 +12,9 @@ Don't use virtualenv (pi comes with specific packages that work - TODO replicate
 
     pip install -r requirements.txt
     sudo pip install einky
+
+
+TODO:
+- Add cleaning method
+- left/right panel nav
+- start on boot
