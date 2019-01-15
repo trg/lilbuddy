@@ -55,7 +55,7 @@ class WemoPanel(LilPanel):
         for device in self.devices:
             name = device.name
             w, h = device_list_font.getsize(name)
-            y = title_y + (count * h) + paddying_y
+            y = title_h + (count * h) + paddying_y
             draw.text((padding_x, y), name, self.inky_display.BLACK, font=device_list_font)
             count += y
 
