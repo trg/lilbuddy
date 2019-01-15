@@ -69,13 +69,14 @@ class WemoPanel(LilPanel):
             letter_text = button_map[count] + ") "
             line_of_text = letter_text + "    "
             line_of_text += name
-            w, h = device_list_font.getsize(line_of_text)
+            _, h = device_list_font.getsize(line_of_text)
+            # offset each row in the Y axis
             y = title_h + (count * h) + padding_y
             # String, with space for icon
             draw.text((padding_x, y), line_of_text, self.inky_display.BLACK, font=device_list_font)
             # Icon:
-            iw, ih = device_list_font.getsize(letter_text)
-            # some magic numbers for positioning
+            iw, _ = device_list_font.getsize(letter_text)
+            # some magic numbers for positioning icon in empty space between A) and Hallway Lamp (name)
             draw.text((padding_x + iw + 2, y + 4), u'\uf0eb', self.inky_display.BLACK, font=icon_font)
             count += 1
 
