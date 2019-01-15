@@ -51,14 +51,14 @@ class WemoPanel(LilPanel):
         device_list_font = ImageFont.truetype(HankenGroteskBold, 16)
         count = 0
         padding_x = 5
-        paddying_y = 2
+        padding_y = 2
+        print self.devices
         for device in self.devices:
             name = device.name
             w, h = device_list_font.getsize(name)
-            y = title_h + (count * h) + paddying_y
+            y = title_h + (count * h) + padding_y
             draw.text((padding_x, y), name, self.inky_display.BLACK, font=device_list_font)
             count += y
-
 
         # Display the completed image
         self.inky_display.set_image(img)
