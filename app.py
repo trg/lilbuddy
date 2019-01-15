@@ -9,7 +9,7 @@ class App():
     """Entry point for Program Access Control"""
 
     def __init__(self):
-        self.inky_display = InkyPHAT("black");
+        self.inky_display = InkyPHAT("black")
         self.panels = [wemo_panel.WemoPanel(self.inky_display)]
         self.panels[0].onMount() # mount first panel
         while True:
