@@ -15,7 +15,7 @@ class App():
         while True:
             # TODO - re-render only if state is dirty
             self.render()
-            time.sleep( 5 ) # re-render every 5 seconds, TODO replace with asyncio?
+            time.sleep( 10 ) # re-render every N seconds, TODO replace with asyncio?
 
     def render(self):
         print "[App] Rendering..."
