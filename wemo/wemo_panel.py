@@ -6,7 +6,7 @@ from inky import InkyPHAT
 from lil_panel import LilPanel
 
 class WemoPanel(LilPanel):
-    def __init__(self, inky):
+    def __init__(self, inky_display):
         super().__init__()
         self.title = "Light Switches"
         print "[WemoPanel __init__] Discovering devices..."
@@ -20,8 +20,6 @@ class WemoPanel(LilPanel):
         print "[WemoPanel] Rendering..."
         # Set up the correct display and scaling factors
         hanken_bold_font = ImageFont.truetype(HankenGroteskBold, 35)
-
-        inky_display = InkyPHAT("black")
 
         # Create a new canvas to draw on
         img = Image.new("P", (inky_display.WIDTH, inky_display.HEIGHT))
