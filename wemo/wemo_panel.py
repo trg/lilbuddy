@@ -34,7 +34,7 @@ class WemoPanel(LilPanel):
         title_w, title_h = hanken_bold_font.getsize(self.title)
         title_x = int((self.inky_display.WIDTH - title_w) / 2)
         title_y = 0
-        draw.text((title_x, title_y), self.title, self.inky_display.WHITE, font=hanken_bold_font)
+        draw.text((title_x, title_y), self.title, self.inky_display.BLACK, font=hanken_bold_font)
 
         # Display the completed image
         self.inky_display.set_image(img)
