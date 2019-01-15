@@ -60,9 +60,9 @@ class WemoPanel(LilPanel):
             print "[WemoPanel render] count = ", count
             name = device.name
             line_of_text = button_map[count] + ") " + name
-            w, h = device_list_font.getsize(name)
+            w, h = device_list_font.getsize(line_of_text)
             y = title_h + (count * h) + padding_y
-            draw.text((padding_x, y), name, self.inky_display.BLACK, font=device_list_font)
+            draw.text((padding_x, y), line_of_text, self.inky_display.BLACK, font=device_list_font)
             count += 1
 
         # Display the completed image
