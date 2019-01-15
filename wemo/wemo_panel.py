@@ -14,8 +14,7 @@ class WemoPanel(LilPanel):
         #self.devices = pywemo.discover_devices()
         print "[WemoPanel onMount] Discovering devices..."
         self.devices = pywemo.discover_devices()
-        print "[WemoPanel onMount] Discovered:"
-        print self.devices
+        print "[WemoPanel onMount] Discovered:", self.devices
         self.title = "Switches"
         print self.devices
 
@@ -55,8 +54,9 @@ class WemoPanel(LilPanel):
         padding_x = 5
         padding_y = 2
         print self.devices
-        button_map = ['A', 'B', 'C', 'D']
+        button_map = ["A", "B", "C", "D"]
         for device in self.devices:
+            print "[WemoPanel render] device = ", device
             name = device.name
             line_of_text = button_map[count] + ") " + name
             w, h = device_list_font.getsize(name)
