@@ -24,7 +24,7 @@ class WemoPanel(LilPanel):
     def render(self):
         print "[WemoPanel] Rendering..."
         # Set up the correct display and scaling factors
-        hanken_bold_font = ImageFont.truetype(HankenGroteskBold, 35)
+        hanken_bold_font = ImageFont.truetype(HankenGroteskBold, 24)
 
         # Create a new canvas to draw on
         img = Image.new("P", (self.inky_display.WIDTH, self.inky_display.HEIGHT))
