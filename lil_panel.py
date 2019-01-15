@@ -1,8 +1,6 @@
-
-
 class LilPanel():
-    def __init__(self):
-        pass
+    def __init__(self, inky):
+        self.inky = inky
 
     def onMount(self):
         """Called when panel comes into view"""
@@ -13,7 +11,7 @@ class LilPanel():
 
     def render(self):
         """Called when screen needs to be rendered. Main render method"""
-
+        pass
 
     def buttonPressed(self, button):
         """Called on any button press, before more specific methods below"""

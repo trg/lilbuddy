@@ -1,5 +1,6 @@
 certifi==2018.11.29
 chardet==3.0.4
+font-hanken-grotesk==0.0.2
 idna==2.8
 netifaces==0.10.9
 pywemo==0.4.38
