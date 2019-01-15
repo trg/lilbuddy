@@ -58,8 +58,10 @@ class WemoPanel(LilPanel):
             name = device.name
             is_on = device.get_state() == 1
             line_of_text = button_map[count] + ") "
-            line_of_text += "[on] " if is_on
-            line_of_text += "[off] " if !is_on
+            if is_on:
+                line_of_text += "[on] "
+            else:
+                line_of_text += "[off] "
             line_of_text += name
             w, h = device_list_font.getsize(line_of_text)
             y = title_h + (count * h) + padding_y
