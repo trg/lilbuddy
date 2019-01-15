@@ -53,11 +53,8 @@ class WemoPanel(LilPanel):
         count = 0
         padding_x = 5
         padding_y = 2
-        print self.devices
         button_map = ["A", "B", "C", "D"]
         for device in self.devices:
-            print "[WemoPanel render] device = ", device
-            print "[WemoPanel render] count = ", count
             name = device.name
             line_of_text = button_map[count] + ") " + name
             w, h = device_list_font.getsize(line_of_text)
