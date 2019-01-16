@@ -2,19 +2,27 @@
 # -*- coding: utf-8 -*-
 
 import sys
-import lil_panel
 import time
 
+# my panels
+import lil_panel
 from wemo import wemo_panel
+
+# pHAT libraries
+import touchphat
 from inky import InkyPHAT
 
 class App():
     """Entry point for Program Access Control"""
 
     def __init__(self):
+        touchphat.all_on() # the ol' razzle dazzle when it boots
+        time.sleep(0.5)
+        touchphat.all_off()
         self.inky_display = InkyPHAT("black")
         self.panels = [wemo_panel.WemoPanel(self.inky_display)]
         self.panels[0].onMount() # mount first panel
+
         while True:
             # TODO - re-render only if state is dirty
             self.render()

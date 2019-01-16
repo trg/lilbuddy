@@ -13,22 +13,26 @@ class LilPanel():
         """Called when screen needs to be rendered. Main render method"""
         pass
 
-    def buttonPressed(self, button):
-        """Called on any button press, before more specific methods below"""
+    def buttonPressed(self):
+        """Called on any button press"""
         pass
 
     def a(self):
         """Called when A button is tapped"""
+        print "a tapped"
         pass
     
     def b(self):
         """Called when B button is tapped"""
+        print "b tapped"
         pass
 
     def c(self):
         """Called when C button is tapped"""
+        print "c tapped"
         pass
 
     def d(self):
         """Called when D button is tapped"""
+        print "d tapped"
         pass

@@ -4,6 +4,11 @@ Code that powers lil buddy (my home Power and Control tool).
 
 Note: The code is sloppy. Commit messages are nonsense.
 
+## Credits:
+
+- pywemo, for the wemo api in python
+- the folks at [pimoroni](https://github.com/pimoroni) for the hardware and the software
+
 ## virtualenv
 
 Use virtualenv
@@ -18,6 +23,7 @@ Don't use virtualenv (pi comes with specific packages that work - TODO replicate
 
     pip install -r requirements.txt
     sudo pip install einky
+    sudo apt-get install python-touchphat # or pip; also there's python3 versions
 
 ## Troubleshooting
 
@@ -27,3 +33,11 @@ TODO:
 - Add cleaning method
 - left/right panel nav
 - start on boot
+
+rsync -avzh -e ssh . pi@192.168.0.105:~/rsync-dest/lilbuddy
+
+## Links
+
+touch pHAT https://github.com/pimoroni/touch-phat
+enable some stuff
+- https://learn.sparkfun.com/tutorials/raspberry-pi-spi-and-i2c-tutorial/all

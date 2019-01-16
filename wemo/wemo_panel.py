@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import pywemo
+import touchphat
 
 from PIL import Image, ImageFont, ImageDraw
 # from font_source_sans_pro import SourceSansPro
@@ -14,6 +15,11 @@ from lil_panel import LilPanel
 class WemoPanel(LilPanel):
 
     def onMount(self):
+        # register touch events
+        touchphat.on_release(2, handler=self.a)
+        touchphat.on_release(3, handler=self.b)
+        touchphat.on_release(4, handler=self.c)
+        touchphat.on_release(5, handler=self.d)
         self.loading_screen("Discovering devices...")
         print "[WemoPanel onMount] Discovering devices..."
         self.devices = pywemo.discover_devices()
@@ -84,4 +90,17 @@ class WemoPanel(LilPanel):
         self.inky_display.set_image(img)
         self.inky_display.show()
 
-    # u'\uf0eb'
+    # button handlers
+    def a(self):
+        try:
+            device = self.devices[0]
+            device.toggle()
+        except IndexError:
+            pass
+
+    def b(self):
+        try:
+            device = self.devices[1]
+            device.toggle()
+        except IndexError:
+            pass
