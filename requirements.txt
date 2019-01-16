@@ -6,8 +6,10 @@ font-source-sans-pro==0.0.1
 idna==2.8
 netifaces==0.10.9
 olefile==0.46
+Pypubsub==4.0.0
 pywemo==0.4.38
 requests==2.21.0
 six==1.12.0
+typing==3.6.6
 urllib3==1.24.1
 wheel==0.24.0

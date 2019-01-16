@@ -15,17 +15,17 @@ from lil_panel import LilPanel
 class WemoPanel(LilPanel):
 
     def onMount(self):
-        # register touch events
-        touchphat.on_release(2, handler=self.a)
-        touchphat.on_release(3, handler=self.b)
-        touchphat.on_release(4, handler=self.c)
-        touchphat.on_release(5, handler=self.d)
         self.loading_screen("Discovering devices...")
         print "[WemoPanel onMount] Discovering devices..."
         self.devices = pywemo.discover_devices()
         print "[WemoPanel onMount] Discovered:", self.devices
         self.title = "Switches"
         print self.devices
+        # register touch events
+        touchphat.on_release(2, handler=self.on_release)
+        touchphat.on_release(3, handler=self.on_release)
+        touchphat.on_release(4, handler=self.on_release)
+        touchphat.on_release(5, handler=self.on_release)
 
     def loading_screen(self, msg):
         current_font = ImageFont.truetype(HankenGroteskBold, 16)
@@ -91,16 +91,11 @@ class WemoPanel(LilPanel):
         self.inky_display.show()
 
     # button handlers
-    def a(self):
+    def on_release(self, event):
         try:
-            device = self.devices[0]
+            device = self.devices[event.channel - 1]
+            print "[WemoPanel buttonPressed] toggling ", device.name
             device.toggle()
         except IndexError:
-            pass
-
-    def b(self):
-        try:
-            device = self.devices[1]
-            device.toggle()
-        except IndexError:
+            print "[WemoPanel buttonPressed] No device at channel ", event.channel
             pass

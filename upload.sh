@@ -1,0 +1,1 @@
+rsync -avzh -e ssh . pi@192.168.0.105:~/rsync-dest/lilbuddy
