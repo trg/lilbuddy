@@ -36,6 +36,12 @@ TODO:
 
 rsync -avzh -e ssh . pi@192.168.0.105:~/rsync-dest/lilbuddy
 
+## PubSub Events
+
+`add_image` - Adds a PIL image to the quote-unquote frame buffer, takes PIL image as input
+`render` - triggers a re-render of current panel (eg: useful if button tapped and state changed)
+
+
 ## Links
 
 touch pHAT https://github.com/pimoroni/touch-phat
